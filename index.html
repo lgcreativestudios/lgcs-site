@@ -58,7 +58,7 @@
   p { margin: 0 0 1.1em; }
   p:last-child { margin-bottom: 0; }
 
-  a { color: var(--ink); text-decoration-underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover { color: var(--signal); }
 
   :focus-visible {
@@ -108,16 +108,6 @@
     color: var(--ink-soft);
     margin-bottom: 0.85rem;
   }
-
-  /* ---------- Section dividers (one-line motif) ---------- */
-  .section-divider {
-    display: block;
-    width: 100%;
-    height: 18px;
-    color: var(--rule);
-    opacity: 0.65;
-  }
-  .section-divider-wrap { padding: 0 1.5rem; max-width: var(--page-max); margin: 0 auto; }
 
   /* ---------- Masthead ---------- */
   .masthead {
@@ -228,7 +218,6 @@
     .digest-grid {
       grid-template-columns: 0.95fr 1.05fr;
       grid-template-areas: "steps sticky";
-      align-items: start;
       gap: 3.5rem;
     }
   }
@@ -246,6 +235,10 @@
   }
   .digest-step:first-child { border-top: none; padding-top: 0; }
   .digest-step.is-current { border-color: var(--signal); }
+
+  @media (max-width: 859px) {
+    .digest-step { min-height: auto; }
+  }
 
   .digest-step-meta {
     display: block;
@@ -377,14 +370,6 @@
   }
   .digest-item.tier-high .digest-score-num { color: var(--signal); }
 
-  .digest-item.is-counting .digest-score-num {
-    color: var(--signal);
-  }
-  .digest-item.is-counting .digest-indicator {
-    background: var(--signal);
-    border-color: var(--signal);
-  }
-
   .digest-score-label {
     font-size: 0.7rem;
     letter-spacing: 0.06em;
@@ -462,15 +447,6 @@
       <circle cx="680" cy="108" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
       <line x1="680" y1="116" x2="680" y2="190" stroke="currentColor" stroke-width="1.5"/>
     </symbol>
-    <symbol id="one-line-divider" viewBox="0 0 400 24">
-      <line x1="0" y1="12" x2="400" y2="12" stroke="currentColor" stroke-width="1.5"/>
-      <line x1="60" y1="12" x2="60" y2="3" stroke="currentColor" stroke-width="1.2"/>
-      <circle cx="60" cy="3" r="2.4" fill="currentColor"/>
-      <line x1="180" y1="12" x2="180" y2="21" stroke="currentColor" stroke-width="1.2"/>
-      <circle cx="180" cy="21" r="2.4" fill="currentColor"/>
-      <line x1="320" y1="12" x2="320" y2="4" stroke="currentColor" stroke-width="1.2"/>
-      <rect x="315" y="0" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
-    </symbol>
   </defs>
 </svg>
 
@@ -513,7 +489,6 @@
     </div>
   </section>
 
-  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
 
   <section id="digest" aria-labelledby="digest-h">
     <div class="wrap">
@@ -521,23 +496,23 @@
         <span class="eyebrow">The first product</span>
         <h2 id="digest-h">One page, assembled from a week of filings</h2>
         <div class="body-copy measure">
-          <p>The first product is automated docket monitoring. It watches the relevant federal and state proceedings, scores each item for relevance, and delivers the result as one page — built to be read in five minutes and handed directly to a board.</p>
+          <p>The first product in development is automated docket monitoring. It will watch the relevant proceedings, score each item against a relevance profile set by the utility, and deliver the result as one page — built to be read in five minutes and handed directly to a board.</p>
         </div>
       </div>
 
       <div class="digest-grid" id="digest-grid">
         <div class="digest-steps">
           <div class="digest-step">
-            <span class="digest-step-meta">Mon</span>
+            <span class="digest-step-meta">Day 1</span>
             <p>A proposed interconnection rule is docketed with a state commission.</p>
           </div>
           <div class="digest-step">
-            <span class="digest-step-meta">Wed</span>
-            <p>Each filing is scored against the utility's relevance profile.</p>
+            <span class="digest-step-meta">Day 3</span>
+            <p>Each filing will be scored against a relevance profile the utility sets.</p>
           </div>
           <div class="digest-step">
-            <span class="digest-step-meta">Fri</span>
-            <p>The week's digest is assembled — one page, plain language, ready for the board.</p>
+            <span class="digest-step-meta">Day 5</span>
+            <p>The digest will be assembled — one page, plain language, ready for the board.</p>
           </div>
         </div>
 
@@ -591,7 +566,6 @@
     </div>
   </section>
 
-  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
 
   <section id="who" aria-labelledby="who-h">
     <div class="wrap">
@@ -603,7 +577,6 @@
     </div>
   </section>
 
-  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
 
   <section id="bring" aria-labelledby="bring-h">
     <div class="wrap">
@@ -615,7 +588,6 @@
     </div>
   </section>
 
-  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
 
   <section id="closing" aria-labelledby="closing-h">
     <div class="wrap">
@@ -627,7 +599,6 @@
     </div>
   </section>
 
-  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
 
   <section id="contact" aria-labelledby="contact-h">
     <div class="wrap">
@@ -661,40 +632,10 @@
 
   grid.classList.add('digest-animated');
 
-  items.forEach(function (item) {
-    var scoreEl = item.querySelector('.digest-score-num');
-    scoreEl.dataset.final = item.dataset.score;
-    scoreEl.textContent = '0';
-  });
-
-  function animateScore(item) {
-    var scoreEl = item.querySelector('.digest-score-num');
-    var final = parseInt(scoreEl.dataset.final, 10);
-    var duration = 650;
-    var start = null;
-
-    item.classList.add('is-counting');
-
-    function step(timestamp) {
-      if (start === null) start = timestamp;
-      var progress = Math.min((timestamp - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 2);
-      scoreEl.textContent = Math.round(eased * final);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      } else {
-        scoreEl.textContent = final;
-        item.classList.remove('is-counting');
-        item.classList.add('is-scored');
-      }
-    }
-    window.requestAnimationFrame(step);
-  }
-
   function revealItem(item) {
     if (item.classList.contains('is-revealed')) return;
     item.classList.add('is-revealed');
-    animateScore(item);
+    item.classList.add('is-scored');
   }
 
   var observer = new IntersectionObserver(function (entries) {
