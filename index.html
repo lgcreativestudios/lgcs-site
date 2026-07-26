@@ -3,78 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Guerre Creative Studios — Regulatory Intelligence for Small Utilities</title>
-<meta name="description" content="La Guerre Creative Studios builds regulatory intelligence for small electric, municipal and water utilities — automated docket monitoring delivered as one page a general manager can read in five minutes.">
+<title>La Guerre Creative Studios | Regulatory Intelligence for Small Utilities</title>
+<meta name="description" content="La Guerre Creative Studios is building automated regulatory docket monitoring for small electric, municipal and water utilities — relevance-scored filings delivered as one page a general manager can read in five minutes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --slate-900: #1B2630;
-    --slate-700: #33454F;
-    --paper: #F1F3EF;
-    --paper-dim: #E5E9E2;
-    --ink: #1B2630;
-    --ink-soft: #4B5A62;
-    --paper-ink-soft: #DDE3D8;
-    --accent: #3E7C6A;
-    --accent-dark: #2B5B4C;
-    --accent-tint: #DCEAE4;
-    --off-white: #F6F7F4;
-    --max: 46rem;
+    --ink: #14171A;
+    --ink-soft: #52584C;
+    --paper: #EAEBE2;
+    --paper-raised: #F8F8F3;
+    --rule: #C8CABB;
+    --signal: #BC3A22;
+    --measure: 40rem;
+    --page-max: 72rem;
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Public Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+    --font-mono: "Courier Prime", "Courier New", monospace;
   }
 
   * { box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   body {
     margin: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+    font-family: var(--font-body);
     font-size: 1.0625rem;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3 {
-    font-family: "Zilla Slab", Georgia, serif;
+  h1, h2 {
+    font-family: var(--font-display);
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.15;
     margin: 0;
-    color: inherit;
+    color: var(--ink);
   }
 
-  p { margin: 0 0 1em; }
+  p { margin: 0 0 1.1em; }
   p:last-child { margin-bottom: 0; }
 
-  a {
-    color: var(--accent-dark);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-  }
-
-  a:hover { color: var(--accent); }
+  a { color: var(--ink); text-decoration-underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--signal); }
 
   :focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--signal);
     outline-offset: 3px;
-    border-radius: 2px;
   }
 
   .wrap {
-    max-width: var(--max);
+    max-width: var(--page-max);
     margin: 0 auto;
     padding: 0 1.5rem;
   }
+
+  .measure { max-width: var(--measure); }
 
   .visually-hidden {
     position: absolute;
@@ -83,343 +81,559 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
-  .visually-hidden:focus {
-    position: static;
-    width: auto; height: auto;
-    clip: auto;
-    white-space: normal;
-    display: inline-block;
-    padding: .5rem 1rem;
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--ink);
+    color: var(--paper-raised);
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    z-index: 100;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 1rem;
   }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    background: var(--slate-900);
-    color: var(--off-white);
-    padding: 4.5rem 0 4rem;
-    border-bottom: 4px solid var(--accent);
-  }
-
-  .hero .wrap { max-width: 42rem; }
-
-  .hero-mark {
-    display: inline-block;
-    width: 2.25rem;
-    height: 0.3rem;
-    background: var(--accent);
-    margin-bottom: 1.75rem;
-    border-radius: 1px;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.9rem, 5vw, 2.75rem);
-    letter-spacing: -0.01em;
-    margin-bottom: 1.1rem;
-  }
-
-  .hero-tagline {
-    font-size: clamp(1.05rem, 2.6vw, 1.3rem);
-    color: var(--off-white);
-    font-weight: 500;
-    max-width: 34rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-statement {
-    color: #C7D3CD;
-    font-size: 1rem;
-    max-width: 32rem;
-    margin-bottom: 0;
-  }
-
-  /* ---------- Sections ---------- */
-  section {
-    padding: 3.25rem 0;
-  }
-
-  section + section {
-    border-top: 1px solid var(--paper-ink-soft);
-  }
-
-  .section-eyebrow {
+  /* ---------- Eyebrow / mono labels ---------- */
+  .eyebrow {
     display: block;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-dark);
-    margin-bottom: 0.65rem;
-  }
-
-  section h2 {
-    font-size: clamp(1.4rem, 3.4vw, 1.75rem);
-    margin-bottom: 1.1rem;
-    max-width: 30rem;
-  }
-
-  section .body-copy {
-    max-width: 38rem;
-    color: var(--ink);
-  }
-
-  section .body-copy p {
     color: var(--ink-soft);
+    margin-bottom: 0.85rem;
   }
 
-  /* ---------- Product / signature element ---------- */
-  .product { background: var(--paper-dim); }
-
-  .brief-mock {
-    margin: 2.25rem 0 0;
-    max-width: 34rem;
+  /* ---------- Section dividers (one-line motif) ---------- */
+  .section-divider {
+    display: block;
+    width: 100%;
+    height: 18px;
+    color: var(--rule);
+    opacity: 0.65;
   }
+  .section-divider-wrap { padding: 0 1.5rem; max-width: var(--page-max); margin: 0 auto; }
 
-  .brief-caption {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.78rem;
-    color: var(--ink-soft);
-    margin-bottom: 0.6rem;
-  }
-
-  .brief-doc {
-    background: var(--off-white);
-    border: 1px solid #C9D2C5;
-    border-radius: 6px;
-    box-shadow: 0 10px 30px -18px rgba(27, 38, 48, 0.45);
+  /* ---------- Masthead ---------- */
+  .masthead {
+    position: relative;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 1px solid var(--rule);
     overflow: hidden;
   }
 
-  .brief-doc-head {
+  .masthead-motif {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--rule);
+    opacity: 0.16;
+    pointer-events: none;
+  }
+
+  .masthead-inner {
+    position: relative;
+    display: grid;
+    gap: 2.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 760px) {
+    .masthead-inner {
+      grid-template-columns: 1.4fr 1fr;
+      align-items: end;
+      gap: 3rem;
+    }
+  }
+
+  .masthead-docid {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin: 0 0 1.25rem;
+  }
+
+  .masthead h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.9rem;
+  }
+
+  .masthead-tagline {
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    color: var(--ink-soft);
+    font-weight: 500;
+    max-width: 30rem;
+    margin: 0;
+  }
+
+  .masthead-block {
+    margin: 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.25rem;
+  }
+
+  .masthead-field {
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  .masthead-field:first-child { border-top: none; }
+
+  .masthead-field dt {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .masthead-field dd {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 3.5rem 0; }
+
+  section h2 {
+    font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+    margin-bottom: 1.15rem;
+    max-width: 32rem;
+  }
+
+  section .body-copy p { color: var(--ink-soft); }
+
+  /* ---------- Digest (signature element) ---------- */
+  .digest-intro { margin-bottom: 2.5rem; }
+
+  .digest-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-areas: "sticky" "steps";
+  }
+
+  @media (min-width: 860px) {
+    .digest-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-areas: "steps sticky";
+      align-items: start;
+      gap: 3.5rem;
+    }
+  }
+
+  .digest-steps { grid-area: steps; }
+
+  .digest-step {
+    min-height: 48vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+    transition: border-color 0.3s ease;
+  }
+  .digest-step:first-child { border-top: none; padding-top: 0; }
+  .digest-step.is-current { border-color: var(--signal); }
+
+  .digest-step-meta {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  .digest-step.is-current .digest-step-meta { color: var(--signal); }
+
+  .digest-step p {
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin: 0;
+    max-width: 26rem;
+  }
+
+  .digest-sticky-col { grid-area: sticky; }
+
+  .digest-sticky {
+    position: sticky;
+    top: 1.25rem;
+  }
+
+  .digest-caption {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    margin: 0 0 0.75rem;
+  }
+
+  .digest-doc {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    box-shadow: 0 14px 34px -22px rgba(20, 23, 26, 0.4);
+  }
+
+  .digest-doc-head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
     padding: 1rem 1.25rem;
-    background: var(--slate-900);
-    color: var(--off-white);
+    border-bottom: 1px solid var(--rule);
   }
 
-  .brief-doc-title {
-    font-family: "Zilla Slab", serif;
+  .digest-doc-title {
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.05rem;
   }
 
-  .brief-doc-meta {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.78rem;
-    color: #AEC0B9;
+  .digest-doc-meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
   }
 
-  .brief-items {
+  .digest-items {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  .brief-item {
-    padding: 1rem 1.25rem;
-    border-top: 1px solid #DDE4D8;
+  .digest-item {
+    padding: 1.1rem 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  .digest-item:first-child { border-top: none; }
+
+  .digest-grid.digest-animated .digest-item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .digest-grid.digest-animated .digest-item.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .brief-item:first-child { border-top: none; }
-
-  .brief-item-top {
+  .digest-item-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
     flex-wrap: wrap;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.5rem;
   }
 
-  .brief-docket {
-    font-family: "IBM Plex Mono", monospace;
+  .digest-id {
+    font-family: var(--font-mono);
     font-size: 0.85rem;
+    font-weight: 700;
     color: var(--ink);
-    font-weight: 500;
   }
 
-  .brief-score {
-    font-family: "IBM Plex Mono", monospace;
+  .digest-score-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-mono);
+  }
+
+  .digest-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ink-soft);
+    background: transparent;
+  }
+
+  .digest-item.tier-high .digest-indicator {
+    background: var(--signal);
+    border-color: var(--signal);
+  }
+
+  .digest-score-num {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    min-width: 1.6em;
+    text-align: right;
+  }
+  .digest-item.tier-high .digest-score-num { color: var(--signal); }
+
+  .digest-item.is-counting .digest-score-num {
+    color: var(--signal);
+  }
+  .digest-item.is-counting .digest-indicator {
+    background: var(--signal);
+    border-color: var(--signal);
+  }
+
+  .digest-score-label {
     font-size: 0.7rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.2rem 0.55rem;
-    border-radius: 3px;
-    white-space: nowrap;
+    color: var(--ink-soft);
   }
+  .digest-item.tier-high .digest-score-label { color: var(--signal); }
 
-  .brief-score--high {
-    background: var(--accent);
-    color: var(--off-white);
-  }
-
-  .brief-score--medium {
-    background: var(--accent-tint);
-    color: var(--accent-dark);
-    border: 1px solid var(--accent);
-  }
-
-  .brief-summary {
+  .digest-summary {
     font-size: 0.95rem;
     color: var(--ink-soft);
     margin: 0;
   }
 
-  /* ---------- Closing ---------- */
-  .closing {
-    background: var(--slate-900);
-    color: var(--off-white);
+  .digest-grid.digest-animated .digest-summary {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .digest-grid.digest-animated .digest-item.is-scored .digest-summary {
+    opacity: 1;
+    transform: none;
   }
 
-  .closing h2 { color: var(--off-white); }
-
-  .closing .body-copy p { color: #C7D3CD; }
-
-  .closing .section-eyebrow { color: #8FBBA9; }
-
   /* ---------- Contact ---------- */
-  .contact { text-align: left; }
-
   .contact-link {
     display: inline-block;
     margin-top: 0.5rem;
-    padding: 0.75rem 1.4rem;
-    background: var(--accent);
-    color: var(--off-white);
-    font-weight: 600;
-    border-radius: 4px;
-    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration-thickness: 1.5px;
   }
-
-  .contact-link:hover {
-    background: var(--accent-dark);
-    color: var(--off-white);
-  }
+  .contact-link:hover { color: var(--signal); }
 
   /* ---------- Footer ---------- */
   footer {
-    background: var(--slate-900);
-    color: #93A2A8;
+    border-top: 1px solid var(--rule);
     padding: 1.75rem 0;
     font-size: 0.85rem;
-    border-top: 1px solid var(--slate-700);
+    color: var(--ink-soft);
   }
+  footer p { margin: 0; font-family: var(--font-mono); }
 
   @media (max-width: 480px) {
-    .hero { padding: 3.25rem 0 3rem; }
+    .masthead { padding: 2.75rem 0 2.25rem; }
     section { padding: 2.5rem 0; }
-    .brief-item-top { flex-direction: column; align-items: flex-start; }
+    .digest-item-top { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<a class="visually-hidden" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="hero-mark" aria-hidden="true"></span>
-    <h1>La Guerre Creative Studios</h1>
-    <p class="hero-tagline">Regulatory intelligence for small electric, municipal and water utilities.</p>
-    <p class="hero-statement">Our first product is automated docket monitoring, delivered as one page — read in five minutes, ready to hand to a board.</p>
+<svg class="visually-hidden" width="0" height="0" aria-hidden="true">
+  <defs>
+    <symbol id="grid-schematic" viewBox="0 0 800 300">
+      <line x1="40" y1="60" x2="760" y2="60" stroke="currentColor" stroke-width="2"/>
+      <line x1="120" y1="60" x2="120" y2="142" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="120" cy="150" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="120" y1="158" x2="120" y2="220" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="108" y="220" width="24" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="260" y1="60" x2="260" y2="110" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="252" cy="118" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="268" cy="118" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="260" y1="126" x2="260" y2="200" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="420" y1="60" x2="420" y2="162" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="420" cy="170" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="560" y1="60" x2="560" y2="120" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="548" y="120" width="24" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="560" y1="134" x2="560" y2="210" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="680" y1="60" x2="680" y2="100" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="680" cy="108" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="680" y1="116" x2="680" y2="190" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="one-line-divider" viewBox="0 0 400 24">
+      <line x1="0" y1="12" x2="400" y2="12" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="60" y1="12" x2="60" y2="3" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="60" cy="3" r="2.4" fill="currentColor"/>
+      <line x1="180" y1="12" x2="180" y2="21" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="180" cy="21" r="2.4" fill="currentColor"/>
+      <line x1="320" y1="12" x2="320" y2="4" stroke="currentColor" stroke-width="1.2"/>
+      <rect x="315" y="0" width="10" height="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <svg class="masthead-motif" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <use href="#grid-schematic"></use>
+  </svg>
+  <div class="wrap masthead-inner">
+    <div>
+      <p class="masthead-docid">DOC — LGCS-HOME · REV 2026-07</p>
+      <h1>La Guerre Creative Studios</h1>
+      <p class="masthead-tagline">Regulatory intelligence for small electric, municipal and water utilities.</p>
+    </div>
+    <dl class="masthead-block">
+      <div class="masthead-field">
+        <dt>Focus</dt>
+        <dd>Docket monitoring</dd>
+      </div>
+      <div class="masthead-field">
+        <dt>For</dt>
+        <dd>Electric, municipal &amp; water utilities</dd>
+      </div>
+      <div class="masthead-field">
+        <dt>Status</dt>
+        <dd>Building the first product</dd>
+      </div>
+    </dl>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="problem" aria-labelledby="problem-h">
+  <section id="problem" aria-labelledby="problem-h">
     <div class="wrap">
-      <span class="section-eyebrow">The problem</span>
+      <span class="eyebrow">The gap</span>
       <h2 id="problem-h">Nobody's job is to read the dockets</h2>
-      <div class="body-copy">
-        <p>Federal and state regulatory dockets keep moving every week, whether or not anyone is watching them. Rate proceedings, interconnection rules, and compliance deadlines accumulate the same way regardless of utility size. A cooperative serving 15,000 customers usually has no one whose job is to read every one of them.</p>
-        <p>The reading gets squeezed in around everything else, or it doesn't happen at all.</p>
+      <div class="body-copy measure">
+        <p>Federal and state regulatory dockets keep moving every week, whether or not anyone is watching them. Rate proceedings, interconnection rules and compliance deadlines accumulate the same way regardless of utility size. A cooperative serving 15,000 customers typically has no one whose job is to read them.</p>
       </div>
     </div>
   </section>
 
-  <section class="product" aria-labelledby="product-h">
-    <div class="wrap">
-      <span class="section-eyebrow">The first product</span>
-      <h2 id="product-h">One page, five minutes, ready for the board</h2>
-      <div class="body-copy">
-        <p>Our first product is automated docket monitoring. It watches the relevant federal and state proceedings, scores each item for relevance, and delivers the result as one page.</p>
-        <p>A general manager can read it in five minutes and hand it directly to a board.</p>
-      </div>
+  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
 
-      <figure class="brief-mock">
-        <figcaption class="brief-caption">Illustrative product mock — not an actual filing.</figcaption>
-        <div class="brief-doc">
-          <div class="brief-doc-head">
-            <span class="brief-doc-title">Weekly Docket Digest</span>
-            <span class="brief-doc-meta">Sample — Week of Jan 05</span>
-          </div>
-          <ul class="brief-items">
-            <li class="brief-item">
-              <div class="brief-item-top">
-                <span class="brief-docket">SAMPLE-001</span>
-                <span class="brief-score brief-score--high">High relevance</span>
-              </div>
-              <p class="brief-summary">Proposed interconnection rule would shorten the study timeline for small generators — worth flagging to engineering before comments close.</p>
-            </li>
-            <li class="brief-item">
-              <div class="brief-item-top">
-                <span class="brief-docket">SAMPLE-002</span>
-                <span class="brief-score brief-score--medium">Medium relevance</span>
-              </div>
-              <p class="brief-summary">State commission opened a proceeding on capital cost recovery for grid hardening — early stage, no action needed yet.</p>
-            </li>
-            <li class="brief-item">
-              <div class="brief-item-top">
-                <span class="brief-docket">SAMPLE-003</span>
-                <span class="brief-score brief-score--medium">Medium relevance</span>
-              </div>
-              <p class="brief-summary">Draft reliability reporting standard would add a filing requirement above 10,000 meters — still a proposal, not yet final.</p>
-            </li>
-          </ul>
+  <section id="digest" aria-labelledby="digest-h">
+    <div class="wrap">
+      <div class="digest-intro">
+        <span class="eyebrow">The first product</span>
+        <h2 id="digest-h">One page, assembled from a week of filings</h2>
+        <div class="body-copy measure">
+          <p>The first product is automated docket monitoring. It watches the relevant federal and state proceedings, scores each item for relevance, and delivers the result as one page — built to be read in five minutes and handed directly to a board.</p>
         </div>
-      </figure>
+      </div>
+
+      <div class="digest-grid" id="digest-grid">
+        <div class="digest-steps">
+          <div class="digest-step">
+            <span class="digest-step-meta">Mon</span>
+            <p>A proposed interconnection rule is docketed with a state commission.</p>
+          </div>
+          <div class="digest-step">
+            <span class="digest-step-meta">Wed</span>
+            <p>Each filing is scored against the utility's relevance profile.</p>
+          </div>
+          <div class="digest-step">
+            <span class="digest-step-meta">Fri</span>
+            <p>The week's digest is assembled — one page, plain language, ready for the board.</p>
+          </div>
+        </div>
+
+        <div class="digest-sticky-col">
+          <div class="digest-sticky">
+            <p class="digest-caption">Illustrative product mock — not an actual filing.</p>
+            <div class="digest-doc">
+              <div class="digest-doc-head">
+                <span class="digest-doc-title">Weekly Docket Digest</span>
+                <span class="digest-doc-meta">Sample week</span>
+              </div>
+              <ul class="digest-items">
+                <li class="digest-item tier-high" data-score="92">
+                  <div class="digest-item-top">
+                    <span class="digest-id">SAMPLE-001</span>
+                    <span class="digest-score-wrap">
+                      <span class="digest-indicator" aria-hidden="true"></span>
+                      <span class="digest-score-num">92</span>
+                      <span class="digest-score-label">High relevance</span>
+                    </span>
+                  </div>
+                  <p class="digest-summary">Proposed interconnection rule would shorten the study timeline for small generators — worth flagging to engineering before comments close.</p>
+                </li>
+                <li class="digest-item tier-medium" data-score="58">
+                  <div class="digest-item-top">
+                    <span class="digest-id">SAMPLE-002</span>
+                    <span class="digest-score-wrap">
+                      <span class="digest-indicator" aria-hidden="true"></span>
+                      <span class="digest-score-num">58</span>
+                      <span class="digest-score-label">Medium relevance</span>
+                    </span>
+                  </div>
+                  <p class="digest-summary">State commission opened a proceeding on capital cost recovery for grid hardening — early stage, no action needed yet.</p>
+                </li>
+                <li class="digest-item tier-low" data-score="24">
+                  <div class="digest-item-top">
+                    <span class="digest-id">SAMPLE-003</span>
+                    <span class="digest-score-wrap">
+                      <span class="digest-indicator" aria-hidden="true"></span>
+                      <span class="digest-score-num">24</span>
+                      <span class="digest-score-label">Low relevance</span>
+                    </span>
+                  </div>
+                  <p class="digest-summary">Draft reliability reporting standard would add a filing requirement above 10,000 meters — still a proposal, worth a note and nothing more.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="who" aria-labelledby="who-h">
+  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
+
+  <section id="who" aria-labelledby="who-h">
     <div class="wrap">
-      <span class="section-eyebrow">Who it's for</span>
+      <span class="eyebrow">Who it's for</span>
       <h2 id="who-h">Built for utilities without a compliance department</h2>
-      <div class="body-copy">
-        <p>The product is built for electric cooperatives and municipal utilities under 50,000 customers, along with small to mid-size water utilities. These are organizations with real regulatory exposure and without a dedicated compliance staff to match it.</p>
+      <div class="body-copy measure">
+        <p>It is built for electric cooperatives and municipal utilities under 50,000 customers, and for small to mid-size water utilities — organizations with real regulatory exposure and no dedicated compliance staff to match it.</p>
       </div>
     </div>
   </section>
 
-  <section class="bring" aria-labelledby="bring-h">
+  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
+
+  <section id="bring" aria-labelledby="bring-h">
     <div class="wrap">
-      <span class="section-eyebrow">What we bring</span>
+      <span class="eyebrow">What we bring</span>
       <h2 id="bring-h">The utility side and the automation side</h2>
-      <div class="body-copy">
-        <p>La Guerre Creative Studios combines ten years of electric utility engineering with automation and applied-AI work. Most firms selling AI to utilities understand the AI and not the utility; we built this the other way around.</p>
+      <div class="body-copy measure">
+        <p>Ten years of electric utility engineering, combined with automation and applied-AI work, sit behind the studio. Most firms selling AI to utilities understand the AI and not the utility; this one was built the other way around.</p>
       </div>
     </div>
   </section>
 
-  <section class="closing" aria-labelledby="closing-h">
+  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
+
+  <section id="closing" aria-labelledby="closing-h">
     <div class="wrap">
-      <span class="section-eyebrow">Closing note</span>
+      <span class="eyebrow">Why small</span>
       <h2 id="closing-h">Deliberately small</h2>
-      <div class="body-copy">
-        <p>The studio is deliberately small — small enough that every brief will be read before it goes out, and every relevance score checked against judgment, not just a model.</p>
+      <div class="body-copy measure">
+        <p>The studio is deliberately small — small enough to stay close to the engineering, and to build the product for the utilities it's meant for rather than the largest possible market.</p>
       </div>
     </div>
   </section>
 
-  <section class="contact" aria-labelledby="contact-h">
+  <div class="section-divider-wrap"><svg class="section-divider" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><use href="#one-line-divider"></use></svg></div>
+
+  <section id="contact" aria-labelledby="contact-h">
     <div class="wrap">
-      <span class="section-eyebrow">Contact</span>
+      <span class="eyebrow">Contact</span>
       <h2 id="contact-h">Get in touch</h2>
-      <p><a class="contact-link" href="mailto:support@lgcreativehub.com">Email support@lgcreativehub.com</a></p>
+      <p><a class="contact-link" href="mailto:support@lgcreativehub.com">support@lgcreativehub.com</a></p>
     </div>
   </section>
 
@@ -427,9 +641,77 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 La Guerre Creative Studios LLC.</p>
+    <p>&copy; 2026 La Guerre Creative Studios LLC.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var grid = document.getElementById('digest-grid');
+  if (!grid) return;
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced || !('IntersectionObserver' in window)) return;
+
+  var steps = Array.prototype.slice.call(grid.querySelectorAll('.digest-step'));
+  var items = Array.prototype.slice.call(grid.querySelectorAll('.digest-item'));
+  if (!steps.length || steps.length !== items.length) return;
+
+  grid.classList.add('digest-animated');
+
+  items.forEach(function (item) {
+    var scoreEl = item.querySelector('.digest-score-num');
+    scoreEl.dataset.final = item.dataset.score;
+    scoreEl.textContent = '0';
+  });
+
+  function animateScore(item) {
+    var scoreEl = item.querySelector('.digest-score-num');
+    var final = parseInt(scoreEl.dataset.final, 10);
+    var duration = 650;
+    var start = null;
+
+    item.classList.add('is-counting');
+
+    function step(timestamp) {
+      if (start === null) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 2);
+      scoreEl.textContent = Math.round(eased * final);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        scoreEl.textContent = final;
+        item.classList.remove('is-counting');
+        item.classList.add('is-scored');
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  function revealItem(item) {
+    if (item.classList.contains('is-revealed')) return;
+    item.classList.add('is-revealed');
+    animateScore(item);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var idx = steps.indexOf(entry.target);
+      if (idx === -1) return;
+      if (entry.isIntersecting) {
+        steps.forEach(function (s) { s.classList.remove('is-current'); });
+        entry.target.classList.add('is-current');
+        revealItem(items[idx]);
+      }
+    });
+  }, { root: null, threshold: 0, rootMargin: '-45% 0px -45% 0px' });
+
+  steps.forEach(function (step) { observer.observe(step); });
+})();
+</script>
 
 </body>
 </html>
