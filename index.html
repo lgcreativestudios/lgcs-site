@@ -3,11 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Guerre Creative Studios | Regulatory Intelligence for Small Utilities</title>
-<meta name="description" content="La Guerre Creative Studios is building automated regulatory docket monitoring for small electric, municipal and water utilities — relevance-scored filings delivered as one page a general manager can read in five minutes.">
+<title>Regulatory Watch Desk | Docket Monitoring for Small Utilities | La Guerre Creative Studios</title>
+<meta name="description" content="La Guerre Creative Studios is building automated regulatory docket monitoring for small electric, municipal and water utilities. FERC coverage at launch, state commissions on request, delivered as one page a general manager can read in five minutes.">
+<link rel="canonical" href="https://laguerrecreativestudios.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laguerrecreativestudios.com/">
+<meta property="og:title" content="Regulatory Watch Desk | Docket Monitoring for Small Utilities | La Guerre Creative Studios">
+<meta property="og:description" content="La Guerre Creative Studios is building automated regulatory docket monitoring for small electric, municipal and water utilities. FERC coverage at launch, state commissions on request, delivered as one page a general manager can read in five minutes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "La Guerre Creative Studios LLC",
+      "url": "https://laguerrecreativestudios.com/",
+      "email": "hello@laguerrecreativestudios.com"
+    }
+  ]
+}
+</script>
 <style>
   :root {
     --ink: #14171A;
@@ -174,7 +192,7 @@
     padding: 0.7rem 0;
     border-top: 1px solid var(--rule);
     display: grid;
-    grid-template-columns: 5.5rem 1fr;
+    grid-template-columns: 6.5rem 1fr;
     gap: 0.75rem;
     align-items: baseline;
   }
@@ -192,6 +210,13 @@
     margin: 0;
     font-size: 0.95rem;
     color: var(--ink);
+  }
+
+  .masthead-attribution {
+    margin: 1rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
   }
 
   /* ---------- Sections ---------- */
@@ -231,10 +256,8 @@
     justify-content: center;
     padding: 1.5rem 0;
     border-top: 1px solid var(--rule);
-    transition: border-color 0.3s ease;
   }
   .digest-step:first-child { border-top: none; padding-top: 0; }
-  .digest-step.is-current { border-color: var(--signal); }
 
   @media (max-width: 859px) {
     .digest-step { min-height: auto; }
@@ -248,9 +271,7 @@
     text-transform: uppercase;
     color: var(--ink-soft);
     margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
   }
-  .digest-step.is-current .digest-step-meta { color: var(--signal); }
 
   .digest-step p {
     font-size: 1.05rem;
@@ -313,16 +334,6 @@
   }
   .digest-item:first-child { border-top: none; }
 
-  .digest-grid.digest-animated .digest-item {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .digest-grid.digest-animated .digest-item.is-revealed {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   .digest-item-top {
     display: flex;
     align-items: center;
@@ -384,16 +395,6 @@
     margin: 0;
   }
 
-  .digest-grid.digest-animated .digest-summary {
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  .digest-grid.digest-animated .digest-item.is-scored .digest-summary {
-    opacity: 1;
-    transform: none;
-  }
-
   /* ---------- Contact ---------- */
   .contact-link {
     display: inline-block;
@@ -414,6 +415,7 @@
     color: var(--ink-soft);
   }
   footer p { margin: 0; font-family: var(--font-mono); }
+  footer p + p { margin-top: 0.4rem; }
 
   @media (max-width: 480px) {
     .masthead { padding: 2.75rem 0 2.25rem; }
@@ -456,24 +458,39 @@
   </svg>
   <div class="wrap masthead-inner">
     <div>
-      <p class="masthead-docid">DOC — LGCS-HOME · REV 2026-07</p>
-      <h1>La Guerre Creative Studios</h1>
-      <p class="masthead-tagline">Regulatory intelligence for small electric, municipal and water utilities.</p>
+      <p class="masthead-docid">DOC — LGCS-HOME · REV 2026-08</p>
+      <h1>Regulatory Watch Desk</h1>
+      <p class="masthead-tagline">Docket monitoring for small electric, municipal and water utilities.</p>
     </div>
-    <dl class="masthead-block">
-      <div class="masthead-field">
-        <dt>Focus</dt>
-        <dd>Docket monitoring</dd>
-      </div>
-      <div class="masthead-field">
-        <dt>For</dt>
-        <dd>Electric, municipal &amp; water utilities</dd>
-      </div>
-      <div class="masthead-field">
-        <dt>Status</dt>
-        <dd>Building the first product</dd>
-      </div>
-    </dl>
+    <div>
+      <dl class="masthead-block">
+        <div class="masthead-field">
+          <dt>Focus</dt>
+          <dd>Regulatory docket monitoring</dd>
+        </div>
+        <div class="masthead-field">
+          <dt>For</dt>
+          <dd>Electric co-ops, municipal and water utilities under 50,000 customers</dd>
+        </div>
+        <div class="masthead-field">
+          <dt>Coverage</dt>
+          <dd>FERC eLibrary at launch. State commissions scoped on request.</dd>
+        </div>
+        <div class="masthead-field">
+          <dt>Engagement</dt>
+          <dd>A fixed-fee pilot, then a monthly subscription</dd>
+        </div>
+        <div class="masthead-field">
+          <dt>Response</dt>
+          <dd>A sample brief on your own docket, within a week</dd>
+        </div>
+        <div class="masthead-field">
+          <dt>Status</dt>
+          <dd>In development, 2026</dd>
+        </div>
+      </dl>
+      <p class="masthead-attribution">A service of La Guerre Creative Studios LLC.</p>
+    </div>
   </div>
 </header>
 
@@ -567,12 +584,25 @@
   </section>
 
 
+  <section id="scope" aria-labelledby="scope-h">
+    <div class="wrap">
+      <span class="eyebrow">Scope and terms</span>
+      <h2 id="scope-h">What it covers, and what it costs</h2>
+      <div class="body-copy measure">
+        <p><strong>Coverage.</strong> FERC eLibrary at launch. State commission coverage will be added per utility — name your commission and we will scope it. We would rather tell you what is covered today than imply more.</p>
+        <p><strong>Cadence.</strong> One digest a week.</p>
+        <p><strong>Engagement.</strong> A fixed-fee pilot is planned with a small number of utilities this year, converting to a monthly subscription if it earns its keep. Priced per utility, not per seat. Pilot engagements start in the low four figures.</p>
+      </div>
+    </div>
+  </section>
+
+
   <section id="who" aria-labelledby="who-h">
     <div class="wrap">
       <span class="eyebrow">Who it's for</span>
       <h2 id="who-h">Built for utilities without a compliance department</h2>
       <div class="body-copy measure">
-        <p>It is built for electric cooperatives and municipal utilities under 50,000 customers, and for small to mid-size water utilities — organizations with real regulatory exposure and no dedicated compliance staff to match it.</p>
+        <p>It is being built for electric cooperatives and municipal utilities under 50,000 customers, and for small to mid-size water utilities — organizations with real regulatory exposure and no dedicated compliance staff to match it.</p>
       </div>
     </div>
   </section>
@@ -583,18 +613,8 @@
       <span class="eyebrow">What we bring</span>
       <h2 id="bring-h">The utility side and the automation side</h2>
       <div class="body-copy measure">
-        <p>Ten years of electric utility engineering, combined with automation and applied-AI work, sit behind the studio. Most firms selling AI to utilities understand the AI and not the utility; this one was built the other way around.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="closing" aria-labelledby="closing-h">
-    <div class="wrap">
-      <span class="eyebrow">Why small</span>
-      <h2 id="closing-h">Deliberately small</h2>
-      <div class="body-copy measure">
-        <p>The studio is deliberately small — small enough to stay close to the engineering, and to build the product for the utilities it's meant for rather than the largest possible market.</p>
+        <p>Ten years of electric utility engineering — distribution planning and grid operations — combined with automation and applied-AI work. Most firms selling AI to utilities understand the AI and not the utility. This one was built the other way around.</p>
+        <p>The studio is deliberately small: small enough to stay close to the engineering, and to build the product for the utilities it is meant for rather than for the largest possible market.</p>
       </div>
     </div>
   </section>
@@ -603,8 +623,13 @@
   <section id="contact" aria-labelledby="contact-h">
     <div class="wrap">
       <span class="eyebrow">Contact</span>
-      <h2 id="contact-h">Get in touch</h2>
-      <p><a class="contact-link" href="mailto:support@lgcreativehub.com">support@lgcreativehub.com</a></p>
+      <h2 id="contact-h">Two ways to start</h2>
+      <div class="body-copy measure">
+        <p>Send us your utility's name. We will send back a sample brief built on your own docket within a week. No charge, no call.<br>
+        <a class="contact-link" href="mailto:hello@laguerrecreativestudios.com?subject=Sample%20brief%20request">Send your utility's name</a></p>
+        <p>Or ask a question first.<br>
+        <a class="contact-link" href="mailto:hello@laguerrecreativestudios.com?subject=Question">Ask a question</a></p>
+      </div>
     </div>
   </section>
 
@@ -612,47 +637,10 @@
 
 <footer>
   <div class="wrap">
+    <p>Regulatory Watch Desk is a service of La Guerre Creative Studios LLC, a New Mexico limited liability company.</p>
     <p>&copy; 2026 La Guerre Creative Studios LLC.</p>
   </div>
 </footer>
-
-<script>
-(function () {
-  'use strict';
-
-  var grid = document.getElementById('digest-grid');
-  if (!grid) return;
-
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced || !('IntersectionObserver' in window)) return;
-
-  var steps = Array.prototype.slice.call(grid.querySelectorAll('.digest-step'));
-  var items = Array.prototype.slice.call(grid.querySelectorAll('.digest-item'));
-  if (!steps.length || steps.length !== items.length) return;
-
-  grid.classList.add('digest-animated');
-
-  function revealItem(item) {
-    if (item.classList.contains('is-revealed')) return;
-    item.classList.add('is-revealed');
-    item.classList.add('is-scored');
-  }
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      var idx = steps.indexOf(entry.target);
-      if (idx === -1) return;
-      if (entry.isIntersecting) {
-        steps.forEach(function (s) { s.classList.remove('is-current'); });
-        entry.target.classList.add('is-current');
-        revealItem(items[idx]);
-      }
-    });
-  }, { root: null, threshold: 0, rootMargin: '-45% 0px -45% 0px' });
-
-  steps.forEach(function (step) { observer.observe(step); });
-})();
-</script>
 
 </body>
 </html>
