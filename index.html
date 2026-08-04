@@ -22,16 +22,6 @@
       "name": "La Guerre Creative Studios LLC",
       "url": "https://laguerrecreativestudios.com/",
       "email": "hello@laguerrecreativestudios.com"
-    },
-    {
-      "@type": "Service",
-      "name": "Regulatory Watch Desk",
-      "serviceType": "Regulatory docket monitoring",
-      "description": "Docket monitoring for small electric, municipal and water utilities.",
-      "provider": {
-        "@type": "Organization",
-        "name": "La Guerre Creative Studios LLC"
-      }
     }
   ]
 }
@@ -266,10 +256,8 @@
     justify-content: center;
     padding: 1.5rem 0;
     border-top: 1px solid var(--rule);
-    transition: border-color 0.3s ease;
   }
   .digest-step:first-child { border-top: none; padding-top: 0; }
-  .digest-step.is-current { border-color: var(--signal); }
 
   @media (max-width: 859px) {
     .digest-step { min-height: auto; }
@@ -283,9 +271,7 @@
     text-transform: uppercase;
     color: var(--ink-soft);
     margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
   }
-  .digest-step.is-current .digest-step-meta { color: var(--signal); }
 
   .digest-step p {
     font-size: 1.05rem;
@@ -348,16 +334,6 @@
   }
   .digest-item:first-child { border-top: none; }
 
-  .digest-grid.digest-animated .digest-item {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .digest-grid.digest-animated .digest-item.is-revealed {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   .digest-item-top {
     display: flex;
     align-items: center;
@@ -417,16 +393,6 @@
     font-size: 0.95rem;
     color: var(--ink-soft);
     margin: 0;
-  }
-
-  .digest-grid.digest-animated .digest-summary {
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  .digest-grid.digest-animated .digest-item.is-scored .digest-summary {
-    opacity: 1;
-    transform: none;
   }
 
   /* ---------- Contact ---------- */
@@ -492,7 +458,7 @@
   </svg>
   <div class="wrap masthead-inner">
     <div>
-      <p class="masthead-docid">DOC — LGCS-HOME · REV 2026-07</p>
+      <p class="masthead-docid">DOC — LGCS-HOME · REV 2026-08</p>
       <h1>Regulatory Watch Desk</h1>
       <p class="masthead-tagline">Docket monitoring for small electric, municipal and water utilities.</p>
     </div>
@@ -623,9 +589,9 @@
       <span class="eyebrow">Scope and terms</span>
       <h2 id="scope-h">What it covers, and what it costs</h2>
       <div class="body-copy measure">
-        <p><strong>Coverage.</strong> FERC eLibrary at launch. State commission coverage is added per utility — name your commission and we will scope it. We would rather tell you what is covered today than imply more.</p>
+        <p><strong>Coverage.</strong> FERC eLibrary at launch. State commission coverage will be added per utility — name your commission and we will scope it. We would rather tell you what is covered today than imply more.</p>
         <p><strong>Cadence.</strong> One digest a week.</p>
-        <p><strong>Engagement.</strong> A fixed-fee pilot with a small number of utilities this year, converting to a monthly subscription if it earns its keep. Priced per utility, not per seat. Pilot engagements start in the low four figures.</p>
+        <p><strong>Engagement.</strong> A fixed-fee pilot is planned with a small number of utilities this year, converting to a monthly subscription if it earns its keep. Priced per utility, not per seat. Pilot engagements start in the low four figures.</p>
       </div>
     </div>
   </section>
@@ -636,7 +602,7 @@
       <span class="eyebrow">Who it's for</span>
       <h2 id="who-h">Built for utilities without a compliance department</h2>
       <div class="body-copy measure">
-        <p>It is built for electric cooperatives and municipal utilities under 50,000 customers, and for small to mid-size water utilities — organizations with real regulatory exposure and no dedicated compliance staff to match it.</p>
+        <p>It is being built for electric cooperatives and municipal utilities under 50,000 customers, and for small to mid-size water utilities — organizations with real regulatory exposure and no dedicated compliance staff to match it.</p>
       </div>
     </div>
   </section>
@@ -675,44 +641,6 @@
     <p>&copy; 2026 La Guerre Creative Studios LLC.</p>
   </div>
 </footer>
-
-<script>
-(function () {
-  'use strict';
-
-  var grid = document.getElementById('digest-grid');
-  if (!grid) return;
-
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced || !('IntersectionObserver' in window)) return;
-
-  var steps = Array.prototype.slice.call(grid.querySelectorAll('.digest-step'));
-  var items = Array.prototype.slice.call(grid.querySelectorAll('.digest-item'));
-  if (!steps.length || steps.length !== items.length) return;
-
-  grid.classList.add('digest-animated');
-
-  function revealItem(item) {
-    if (item.classList.contains('is-revealed')) return;
-    item.classList.add('is-revealed');
-    item.classList.add('is-scored');
-  }
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      var idx = steps.indexOf(entry.target);
-      if (idx === -1) return;
-      if (entry.isIntersecting) {
-        steps.forEach(function (s) { s.classList.remove('is-current'); });
-        entry.target.classList.add('is-current');
-        revealItem(items[idx]);
-      }
-    });
-  }, { root: null, threshold: 0, rootMargin: '-45% 0px -45% 0px' });
-
-  steps.forEach(function (step) { observer.observe(step); });
-})();
-</script>
 
 </body>
 </html>
